@@ -548,8 +548,9 @@ namespace Client.Logic.Windows.Editors
             npc.Story = parse[n + 16].ToInt();
             npc.Shop = parse[n + 17].ToInt();
             npc.DeathStory = parse[n + 18].ToInt();
+            npc.Costume = parse[n + 19].ToInt();
 
-            n += 19;
+            n += 20;
             // Load npc moves
             for (int i = 0; i < npc.Moves.Length; i++)
             {

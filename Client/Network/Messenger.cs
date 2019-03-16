@@ -1224,7 +1224,8 @@ namespace Client.Logic.Network
                 ((int)npc.SpawnWeather).ToString(),
                 npc.Story.ToString(),
                 npc.Shop.ToString(),
-                npc.DeathStory.ToString()
+                npc.DeathStory.ToString(),
+                npc.Costume.ToString()
             );
 
             for (int i = 0; i < npc.Moves.Length; i++)

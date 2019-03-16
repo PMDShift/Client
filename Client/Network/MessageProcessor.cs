@@ -580,8 +580,9 @@ namespace Client.Logic.Network
                                 //
                                 //}
                                 map.MapNpcs[i].ScreenActive = parse[n + 10].ToBool();
+                                // Skip
 
-                                n += 11;
+                                n += 12;
                             }
                         }
                     }

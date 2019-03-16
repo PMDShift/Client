@@ -83,6 +83,7 @@ namespace Client.Logic.Editors.NPCs
         public int Story { get; set; }
         public int Shop { get; set; }
         public int DeathStory { get; set; }
+        public int Costume { get; set; }
 
         #endregion Properties
     }
