@@ -1836,8 +1836,10 @@ namespace Client.Logic.Network
                             myPlayer.Inventory[i].Num = parse[n].ToInt();
                             myPlayer.Inventory[i].Value = parse[n + 1].ToInt();
                             myPlayer.Inventory[i].Sticky = parse[n + 2].ToBool();
+                            // Skip
+                            // Skip
 
-                            n += 3;
+                            n += 5;
                         }
                     }
                     break;
@@ -1846,6 +1848,8 @@ namespace Client.Logic.Network
                         PlayerManager.MyPlayer.Inventory[parse[1].ToInt()].Num = parse[2].ToInt();
                         PlayerManager.MyPlayer.Inventory[parse[1].ToInt()].Value = parse[3].ToInt();
                         PlayerManager.MyPlayer.Inventory[parse[1].ToInt()].Sticky = parse[4].ToBool();
+                        // Skip
+                        // SKip
 
                         if (WindowSwitcher.GameWindow.MenuManager.FindMenu("mnuInventory") != null)
                         {
