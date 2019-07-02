@@ -226,14 +226,15 @@ namespace Client.Logic.Network
                                 recruit.Form = parse[n + 2].ToInt();
                                 recruit.Shiny = (Enums.Coloration)parse[n + 3].ToInt();
                                 recruit.Sex = (Enums.Sex)parse[n + 4].ToInt();
-                                recruit.HP = parse[n + 5].ToInt();
-                                recruit.MaxHP = parse[n + 6].ToInt();
-                                recruit.ExpPercent = parse[n + 7].ToInt();
-                                recruit.Level = parse[n + 8].ToInt();
-                                recruit.StatusAilment = (Enums.StatusAilment)parse[n + 9].ToInt();
-                                recruit.HeldItemSlot = parse[n + 10].ToInt();
+                                // Skip
+                                recruit.HP = parse[n + 6].ToInt();
+                                recruit.MaxHP = parse[n + 7].ToInt();
+                                recruit.ExpPercent = parse[n + 8].ToInt();
+                                recruit.Level = parse[n + 9].ToInt();
+                                recruit.StatusAilment = (Enums.StatusAilment)parse[n + 10].ToInt();
+                                recruit.HeldItemSlot = parse[n + 11].ToInt();
                                 recruit.Loaded = true;
-                                n += 11;
+                                n += 12;
                             }
                             else
                             {
