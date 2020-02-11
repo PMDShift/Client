@@ -1495,10 +1495,11 @@ namespace Client.Logic.Network
                         PlayerManager.MyPlayer.TimeMultiplier = parse[23].ToInt();
 
                         // 25 is money
+                        // 26 is InParty
 
-                        for (int i = 0; i < parse[26].ToInt(); i++)
+                        for (int i = 0; i < parse[27].ToInt(); i++)
                         {
-                            PlayerManager.MyPlayer.VolatileStatus.Add(parse[27 + i].ToInt());
+                            PlayerManager.MyPlayer.VolatileStatus.Add(parse[28 + i].ToInt());
                         }
 
                         // Make sure they aren't walking
