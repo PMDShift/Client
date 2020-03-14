@@ -3130,7 +3130,7 @@ namespace Client.Logic.Windows.Editors
 
                 nudTileSet = new NumericUpDown("nudTileSet");
                 nudTileSet.Minimum = 0;
-                nudTileSet.Maximum = 10;
+                nudTileSet.Maximum = Graphics.GraphicsManager.MAX_TILES - 1;
                 nudTileSet.Size = new Size(80, 20);
                 nudTileSet.Location = new Point(100, 4);
                 nudTileSet.Font = Graphics.FontManager.LoadFont("tahoma", 10);

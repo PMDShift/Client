@@ -34,7 +34,7 @@ namespace Client.Logic.Graphics
     {
         #region Fields
 
-        internal const int MAX_TILES = 11;
+        internal const int MAX_TILES = 12;
         internal const int PIC_X = 32;
         internal const int PIC_Y = 32;
 

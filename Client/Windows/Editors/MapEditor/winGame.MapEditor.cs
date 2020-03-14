@@ -956,7 +956,7 @@ namespace Client.Logic.Windows
             hTilesetSelect = new HScrollBar("hTilesetSelect");
             hTilesetSelect.Location = new Point(5, 60);
             hTilesetSelect.Size = new Size(290, 12);
-            hTilesetSelect.Maximum = 10;
+            hTilesetSelect.Maximum = Graphics.GraphicsManager.MAX_TILES - 1;
             hTilesetSelect.ValueChanged += new EventHandler<ValueChangedEventArgs>(hTilesetSelect_ValueChanged);
 
             lblSelectedTileset = new Label("lblSelectedTileset");
