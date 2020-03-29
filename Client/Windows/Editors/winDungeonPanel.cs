@@ -704,8 +704,7 @@ namespace Client.Logic.Windows.Editors
                 lbxDungeonRMaps.Items.Add(lbiMap);
             }
 
-
-
+            dungeon.LegendaryId = parse[n++].ToInt();
 
             btnEdit.Text = "Edit";
         }

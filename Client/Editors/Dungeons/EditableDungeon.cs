@@ -27,6 +27,7 @@ namespace Client.Logic.Editors.Dungeons
     {
         public string Name { get; set; }
         public bool AllowsRescue { get; set; }
+        public int LegendaryId { get; set; }
 
         public List<EditableStandardDungeonMap> StandardMaps { get; set; }
         public List<EditableRandomDungeonMap> RandomMaps { get; set; }

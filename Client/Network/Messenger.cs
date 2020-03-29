@@ -1143,6 +1143,8 @@ namespace Client.Logic.Network
                     dungeonToSend.RandomMaps[i].RDungeonFloor.ToString());
             }
 
+            packet.AppendParameter(dungeonToSend.LegendaryId);
+
             packet.FinalizePacket();
             SendPacket(packet);
         }
