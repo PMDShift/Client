@@ -1496,10 +1496,11 @@ namespace Client.Logic.Network
 
                         // 25 is money
                         // 26 is InParty
+                        // 27 is OutlawRole
 
-                        for (int i = 0; i < parse[27].ToInt(); i++)
+                        for (int i = 0; i < parse[28].ToInt(); i++)
                         {
-                            PlayerManager.MyPlayer.VolatileStatus.Add(parse[28 + i].ToInt());
+                            PlayerManager.MyPlayer.VolatileStatus.Add(parse[29 + i].ToInt());
                         }
 
                         // Make sure they aren't walking
