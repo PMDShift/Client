@@ -1432,10 +1432,10 @@ namespace Client.Logic.Network
                         player.Status = parse[17];
                         player.ScreenActive = parse[18].ToBool();
                         //player.Confused = parse[14].ToBool();
-                        player.StatusAilment = (Enums.StatusAilment)parse[20].ToInt();
-                        for (int i = 0; i < parse[21].ToInt(); i++)
+                        player.StatusAilment = (Enums.StatusAilment)parse[21].ToInt();
+                        for (int i = 0; i < parse[22].ToInt(); i++)
                         {
-                            player.VolatileStatus.Add(parse[22 + i].ToInt());
+                            player.VolatileStatus.Add(parse[23 + i].ToInt());
                         }
                         // Make sure they aren't walking
                         player.MovementSpeed = Enums.MovementSpeed.Standing;
