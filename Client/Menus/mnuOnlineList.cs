@@ -121,6 +121,7 @@ namespace Client.Logic.Menus
                 // Try not to be too impressed... ;)
                 ListBoxTextItem item = new ListBoxTextItem(FontManager.LoadFont("PMDCP", 16), parse[n++]);
                 item.ForeColor = Color.FromArgb(parse[n++].ToInt());
+                n++;
                 lstOnlinePlayers.Items.Add(item);
             }
 
