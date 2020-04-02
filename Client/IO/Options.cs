@@ -463,7 +463,7 @@ namespace Client.Logic.IO
             }
             // TODO: Remove when unneeded (Autoswitch to localhost server if compiled under DEBUG)
 #if DEBUG
-            ConnectionIP = "localhost";
+            //ConnectionIP = "localhost";
 #endif
         }
 
