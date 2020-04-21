@@ -42,12 +42,14 @@ namespace Client.Logic.Updater
 
         GitHubUpdater updater;
         IReadOnlyList<GitHubUpdateResult> updateResult;
+        private readonly Action postUpdateLoad;
 
-        public winUpdater(GitHubUpdater updater, IReadOnlyList<GitHubUpdateResult> updateResult)
+        public winUpdater(GitHubUpdater updater, IReadOnlyList<GitHubUpdateResult> updateResult, Action postUpdateLoad)
             : base("winUpdater")
         {
             this.updater = updater;
             this.updateResult = updateResult;
+            this.postUpdateLoad = postUpdateLoad;
 
             Windows.WindowSwitcher.UpdaterWindow = this;
             this.Windowed = true;
@@ -113,7 +115,7 @@ namespace Client.Logic.Updater
             btnAccept.Click += new EventHandler<MouseButtonEventArgs>(btnAccept_Click);
 
             btnDecline = new Button("btnDecline");
-            btnDecline.Text = "No";
+            btnDecline.Text = "Skip";
             btnDecline.Font = Graphics.FontManager.LoadFont("tahoma", 12);
             btnDecline.Size = new Size(100, 20);
             btnDecline.Location = new Point(lblUpdateFound.Location.X + btnAccept.Width + 5, lblUpdateFound.Location.Y + lblUpdateFound.Height + 5);
@@ -210,7 +212,8 @@ namespace Client.Logic.Updater
 
         void btnDecline_Click(object sender, MouseButtonEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
+            postUpdateLoad();
         }
 
         void Updater_StatusUpdated(object sender, EventArgs e)

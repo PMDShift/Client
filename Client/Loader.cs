@@ -262,7 +262,7 @@ namespace Client.Logic
                      if (result.Count > 0)
                      {
                          WindowSwitcher.FindWindow("winLoading").Visible = false;
-                         SdlDotNet.Widgets.WindowManager.AddWindow(new Updater.winUpdater(updater, result));
+                         SdlDotNet.Widgets.WindowManager.AddWindow(new Updater.winUpdater(updater, result, PostUpdateLoad));
                          Windows.WindowSwitcher.UpdaterWindow.AlwaysOnTop = true;
                      }
                      else
@@ -286,6 +286,7 @@ namespace Client.Logic
             Music.Music.Initialize();
             Skins.SkinManager.PlaySkinMusic();
             winLoading winLoading = WindowSwitcher.FindWindow("winLoading") as winLoading;
+            winLoading.Visible = true;
             winLoading.UpdateLoadText("Loading game...");
             CheckFolders();
             LoadGuis();
