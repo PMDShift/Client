@@ -67,6 +67,9 @@ namespace Client.Logic.Moves
                     mMoves[i].TargetType = (Enums.MoveTarget)parse[n + 4].ToInt();
                     mMoves[i].HitTime = parse[n + 5].ToInt();
                     mMoves[i].HitFreeze = parse[n + 6].ToBool();
+
+                    n += 3;
+
                     n += 7;
                     ((Windows.winLoading)Windows.WindowSwitcher.FindWindow("winLoading")).UpdateLoadText("Recieving Data... " + DataManager.AverageLoadPercent().ToString() + "%");
                 }
