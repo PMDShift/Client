@@ -95,11 +95,11 @@ namespace Client.Logic
                 return;
             }
 
-            if (command.StartsWith("/edithouse"))
-            {
-                Messenger.SendPacket(TcpPacket.CreatePacket("requestedithouse"));
-                return;
-            }
+            //if (command.StartsWith("/edithouse"))
+            //{
+            //    Messenger.SendPacket(TcpPacket.CreatePacket("requestedithouse"));
+            //    return;
+            //}
 
             if (command.StartsWith("/refresh"))
             {
@@ -138,7 +138,7 @@ namespace Client.Logic
                 }
             }
 
-            if (Ranks.IsAllowed(Players.PlayerManager.MyPlayer, Enums.Rank.Mapper))
+            if (Ranks.IsAllowed(Players.PlayerManager.MyPlayer, Enums.Rank.Scriptor))
             {
                 // Map Editor
                 if (command.StartsWith("/editmap"))
