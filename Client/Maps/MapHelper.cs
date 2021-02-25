@@ -366,9 +366,15 @@ namespace Client.Logic.Maps
                     tile.F4AnimSet = parse[n + 49].ToInt();
                     tile.Fringe5Set = parse[n + 50].ToInt();
                     tile.F5AnimSet = parse[n + 51].ToInt();
+
+                    //parse[n + 52];
+                    //parse[n + 53];
+                    //parse[n + 54];
+                    //parse[n + 55];
+
                     map.Tile[x, y] = tile;
                     map.OriginalTiles[x, y] = (Tile)tile.Clone();
-                    n += 52;
+                    n += 56;
 
                     // Load tiles into cache
                     tile.GroundGraphic = Logic.Graphics.GraphicsManager.Tiles[tile.GroundSet].GetTileGraphic(tile.Ground);
