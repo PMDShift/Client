@@ -1429,13 +1429,14 @@ namespace Client.Logic.Network
                         player.Dead = parse[14].ToBool();
                         player.Guild = parse[15];
                         player.GuildAccess = (Enums.GuildRank)parse[16].ToInt();
-                        player.Status = parse[17];
-                        player.ScreenActive = parse[18].ToBool();
+                        //parse[17];
+                        player.Status = parse[18];
+                        player.ScreenActive = parse[19].ToBool();
                         //player.Confused = parse[14].ToBool();
-                        player.StatusAilment = (Enums.StatusAilment)parse[21].ToInt();
-                        for (int i = 0; i < parse[22].ToInt(); i++)
+                        player.StatusAilment = (Enums.StatusAilment)parse[22].ToInt();
+                        for (int i = 0; i < parse[23].ToInt(); i++)
                         {
-                            player.VolatileStatus.Add(parse[23 + i].ToInt());
+                            player.VolatileStatus.Add(parse[24 + i].ToInt());
                         }
                         // Make sure they aren't walking
                         player.MovementSpeed = Enums.MovementSpeed.Standing;
@@ -1474,12 +1475,13 @@ namespace Client.Logic.Network
                         PlayerManager.MyPlayer.Dead = parse[14].ToBool();
                         PlayerManager.MyPlayer.Guild = parse[15];
                         PlayerManager.MyPlayer.GuildAccess = (Enums.GuildRank)parse[16].ToInt();
-                        PlayerManager.MyPlayer.Solid = parse[17].ToBool();
-                        PlayerManager.MyPlayer.Status = parse[18];
-                        PlayerManager.MyPlayer.Confused = parse[19].ToBool();
-                        PlayerManager.MyPlayer.StatusAilment = (Enums.StatusAilment)parse[20].ToInt();
-                        PlayerManager.MyPlayer.SpeedLimit = (Enums.MovementSpeed)parse[21].ToInt();
-                        int mobility = parse[22].ToInt();
+                        //parse[17];
+                        PlayerManager.MyPlayer.Solid = parse[18].ToBool();
+                        PlayerManager.MyPlayer.Status = parse[19];
+                        PlayerManager.MyPlayer.Confused = parse[20].ToBool();
+                        PlayerManager.MyPlayer.StatusAilment = (Enums.StatusAilment)parse[21].ToInt();
+                        PlayerManager.MyPlayer.SpeedLimit = (Enums.MovementSpeed)parse[22].ToInt();
+                        int mobility = parse[23].ToInt();
                         for (int i = 0; i < 16; i++)
                         {
                             if (mobility % 2 == 1)
@@ -1492,24 +1494,25 @@ namespace Client.Logic.Network
                             }
                             mobility /= 2;
                         }
-                        PlayerManager.MyPlayer.TimeMultiplier = parse[23].ToInt();
+                        PlayerManager.MyPlayer.TimeMultiplier = parse[24].ToInt();
 
-                        // 25 is money
-                        // 26 is InParty
-                        // 27 is OutlawRole
+                        // 25 is darkness
+                        // 26 is money
+                        // 27 is InParty
+                        // 28 is OutlawRole
 
-                        for (int i = 0; i < parse[28].ToInt(); i++)
+                        for (int i = 0; i < parse[29].ToInt(); i++)
                         {
-                            PlayerManager.MyPlayer.VolatileStatus.Add(parse[29 + i].ToInt());
+                            PlayerManager.MyPlayer.VolatileStatus.Add(parse[30 + i].ToInt());
                         }
 
                         // Make sure they aren't walking
                         PlayerManager.MyPlayer.MovementSpeed = Enums.MovementSpeed.Standing;
                         PlayerManager.MyPlayer.Offset = new Point();
 
-                        if (PlayerManager.MyPlayer.Darkness != parse[24].ToInt())
+                        if (PlayerManager.MyPlayer.Darkness != parse[25].ToInt())
                         {
-                            PlayerManager.MyPlayer.Darkness = parse[24].ToInt();
+                            PlayerManager.MyPlayer.Darkness = parse[25].ToInt();
                             if (PlayerManager.MyPlayer.Darkness > -2)
                             {
                                 Logic.Graphics.Renderers.Screen.ScreenRenderer.RenderOptions.SetDarkness(PlayerManager.MyPlayer.Darkness);
