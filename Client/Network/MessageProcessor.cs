@@ -1343,6 +1343,7 @@ namespace Client.Logic.Network
                         Items.ItemHelper.Items[n].AttackSpeed = parse[28].ToInt();
                         Items.ItemHelper.Items[n].RecruitBonus = parse[29].ToInt();
 
+                        // 30
 
                         if (WindowSwitcher.FindWindow("winItemPanel") != null)
                         {

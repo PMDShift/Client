@@ -99,7 +99,8 @@ namespace Client.Logic.Items
                         item.AddEXP = parse[n + 26].ToInt();
                         item.AttackSpeed = parse[n + 27].ToInt();
                         item.RecruitBonus = parse[n + 28].ToInt();
-                        n += 29;
+                        //29
+                        n += 30;
                     }
                     else
                     {
